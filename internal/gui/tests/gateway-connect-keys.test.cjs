@@ -162,6 +162,12 @@ for (const engine of (process.env.BROWSER ? [process.env.BROWSER] : ["chromium",
       const lan = page.locator('#gatewayKeys .acc[data-key^="lan-key"]');
       await confirmKeyAction(page, lan, w.remove);
       await lan.waitFor({ state: "detached" });
+      // the last key gone: the same card, with the line centred in it
+      const emptyKeys = page.locator("#gatewayKeys .accts > .none");
+      await emptyKeys.waitFor();
+      assert.equal(await emptyKeys.textContent(), locale === "zh" ? "尚无网关密钥" : "No gateway keys yet");
+      assert.equal(await page.locator("#gatewayKeys .accts").count(), 1);
+      assert.equal(await emptyKeys.evaluate((el) => getComputedStyle(el).textAlign), "center");
       assert.equal(await page.locator("#connect .snip-wrap .copy").count(), 0);
       assert.equal(await page.locator("#connectKey").count(), 0);
       await page.locator("#addGatewayKey").click();

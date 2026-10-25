@@ -57,6 +57,8 @@ Magpie and appears in Gateway without a reload.
 caller keys for Shell, curl, Python and Node examples across all four APIs.
 It checks rotation, disabling, removal, stale list responses, empty states,
 literal custom names and narrow layouts in Chinese and English on both engines.
+With every key removed, the empty line stays in the keys' card, centred
+and muted.
 Sharing off keeps the original API-key field and hides the gateway-key picker;
 sharing on names the arbitrary local option separately from the Magpie key.
 
