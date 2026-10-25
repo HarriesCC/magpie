@@ -2612,6 +2612,9 @@ body.window .ag-sk-icon { width: 22px; height: 22px; border-radius: 6px; }
   .accts.keys .acc:not(:hover) > .alane:not(.set):not(.open):not(:focus) { margin-left: -9px; }
 }
 .accts.keys .acc .using, .accts.keys .acc > .text:not(.quiet) { flex: none; white-space: nowrap; }
+/* no gateway keys yet: the same card as the keys, with the line centred
+   in it. Flush left and unpadded, that one line reads as an input. */
+#gatewayKeys .accts > .none { padding: 12px 16px; color: var(--muted); text-align: center; line-height: 1.5; }
 #gatewayKeys .acc { min-width: 0; }
 #gatewayKeys .acc .plan { flex: 0 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
 /* a gateway key's own limit (#585): the badge, what it used under the

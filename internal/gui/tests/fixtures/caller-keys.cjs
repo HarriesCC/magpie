@@ -9,7 +9,9 @@ const sum = (rows) => ({
 });
 
 function fixture(lang, theme, events, options = {}) {
-  let keys = [
+  // options.noKeys starts with none, so Gateway's empty line can be read.
+  // Turning sharing on still makes a Magpie key, as it does with keys.
+  let keys = options.noKeys ? [] : [
     { id: "laptop", name: "Laptop", masked: "sk-magpie-key-…111111" },
     { id: "server", name: "Server", masked: "sk-magpie-key-…222222" },
     { id: "work", name: "Work", masked: "sk-magpie-key-…333333" },
